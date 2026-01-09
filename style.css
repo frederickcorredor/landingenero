@@ -75,7 +75,7 @@ video{
     cursor: pointer;
     z-index: 10;
     animation: pulse 1.6s infinite;
-	width: 194px;
+	min-width: 194px;
 }
 
 /* Animación sutil */
@@ -154,4 +154,5 @@ video{
             animation-timing-function: ease-out;
   }
 }
+
 
