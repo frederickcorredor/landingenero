@@ -78,6 +78,7 @@ video{
 	min-width: 200px;
 	text-align:center;
 	text-wrap: nowrap;
+	color: #ff1212;
 }
 
 /* Animación sutil */
@@ -156,6 +157,7 @@ video{
             animation-timing-function: ease-out;
   }
 }
+
 
 
 
