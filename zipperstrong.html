@@ -588,12 +588,12 @@ src="https://www.facebook.com/tr?id=4179745702267005&ev=PageView&noscript=1"
             </label>
           </div>
 
-          <div>
+           <div>
             <label>Departamento
               <span class="field">
-                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5Z"></path></svg>
-                <select required="" name="state" class="in with-ico">
-                  <option value="" selected="" disabled="">Selecciona</option>
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5Z"/></svg>
+                <select required name="state" id="state" class="in with-ico">
+                  <option value="" selected disabled>Selecciona</option>
                   <option>Amazonas</option><option>Antioquia</option><option>Arauca</option><option>Atlántico</option>
                   <option>Bolívar</option><option>Boyacá</option><option>Caldas</option><option>Caquetá</option><option>Casanare</option><option>Cauca</option><option>Cesar</option>
                   <option>Chocó</option><option>Córdoba</option><option>Cundinamarca</option><option>Guainía</option><option>Guaviare</option><option>Huila</option><option>La Guajira</option>
@@ -605,8 +605,10 @@ src="https://www.facebook.com/tr?id=4179745702267005&ev=PageView&noscript=1"
 
             <label>Ciudad / Municipio
               <span class="field">
-                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a6 6 0 0 0-6 6c0 3.87 6 10 6 10s6-6.13 6-10a6 6 0 0 0-6-6Zm0 8a2 2 0 1 1 2-2 2 2 0 0 1-2 2Z"></path></svg>
-                <input required="" name="city" type="text" placeholder="Ej. Bogotá, Medellín" class="in with-ico" maxlength="60">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a6 6 0 0 0-6 6c0 3.87 6 10 6 10s6-6.13 6-10a6 6 0 0 0-6-6Zm0 8a2 2 0 1 1 2-2 2 2 0 0 1-2 2Z"/></svg>
+                <select required name="city" id="city" class="in with-ico" disabled>
+                  <option selected disabled>Selecciona un departamento primero</option>
+                </select>
               </span>
             </label>
           </div>
@@ -1738,3 +1740,4 @@ closeModalAndReset();
 
 
 </body></html>
+
