@@ -58,6 +58,37 @@ video{
 }
 
 
+.sound-overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    cursor: pointer;
+    z-index: 10;
+
+    animation: pulse 1.6s infinite;
+}
+
+/* Animación sutil */
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+
 @-webkit-keyframes heartbeat {
   from {
     -webkit-transform: scale(1);
