@@ -20,3 +20,7 @@ video.addEventListener("timeupdate", () => {
         boton.classList.add("activo");
     }
 });
+
+boton.addEventListener("click", () => {
+    window.location.href = "https://frederickcorredor.github.io/landingenero/zipperstrong.html";
+});
