@@ -11,23 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
   </noscript>
   
-<!-- Meta Pixel Code -->
-<script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4179745702267005');
-fbq('track', 'PageView');
+ <!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('D4MSL7JC77UBCCH9I42G');
+  ttq.page();
+}(window, document, 'ttq');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4179745702267005&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+<!-- TikTok Pixel Code End -->
 
   <style>
     :root{
@@ -273,6 +269,54 @@ src="https://www.facebook.com/tr?id=4179745702267005&ev=PageView&noscript=1"
       border-radius: 8px;
       object-fit: cover;
     }
+
+
+    /* ===== Video wrap + barra progreso + aviso ===== */
+.video-wrap{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  position:relative;
+}
+
+/* Barra de progreso */
+.video-progress{
+  width: min(50vw, 520px);
+  height: 10px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 999px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,0.22);
+}
+.video-progress__fill{
+  width:0%;
+  height:100%;
+  background: linear-gradient(90deg, #00ff2a, #ffb300);
+  border-radius: 999px;
+  transition: width .08s linear;
+}
+
+/* Aviso de inventario */
+.stock-alert{
+  width: min(80vw, 520px);
+  text-align:center;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.55);
+  font-size: 0.95rem;
+  line-height: 1.2rem;
+}
+.stock-alert .countdown{
+  display:inline-block;
+  font-weight:800;
+  color: #ffb300;
+  margin-left:6px;
+}
+
     @keyframes carousel-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     @media (max-width:420px){ .slide { flex: 0 0 30%; } @keyframes carousel-scroll { 0% {transform:translateX(0);} 100% {transform:translateX(-100%);} } }
 
@@ -311,6 +355,15 @@ src="https://www.facebook.com/tr?id=4179745702267005&ev=PageView&noscript=1"
              <video style="width: 50vw;"
             src="https://zipperstrong.renovexenlinea.com/video2peque.mp4" id="video1" autoplay>
         </video>
+        <div class="video-progress" aria-label="Progreso del video">
+    <div class="video-progress__fill" id="videoProgressFill"></div>
+  </div>
+
+  <!-- Aviso de agotado + cuenta regresiva -->
+  <div class="stock-alert" id="stockAlert" role="status" aria-live="polite">
+    <strong>Producto agotado.</strong> <br> Estamos agregando inventario disponible en
+    <span class="countdown" id="stockCountdown">05:00</span>
+  </div>
     </div>
   </header>
 
@@ -334,7 +387,7 @@ src="https://www.facebook.com/tr?id=4179745702267005&ev=PageView&noscript=1"
         <div class="box"><div class="t-s" style="font-size:0.9rem">00</div></div>
       </div>
 
-    <img loading="lazy" decoding="async" src="enero2.webp" alt="" style="margin-top: 7px">
+    <img loading="lazy" decoding="async" src="https://zipperstrong.renovexenlinea.com/enero2.webp" alt="" style="margin-top: 7px">
 
 <h3 style="text-align:center;margin-top: -15px;font-size: 21px;">Esto dicen <br> <strong style="color: var(--gold);font-size: 24px;">PACIENTES</strong> y <strong style="color: var(--gold);font-size: 24px;">EXPERTOS</strong></h3>
     <!-- ===== CARRUSEL DE VIDEOS ===== -->
@@ -1058,7 +1111,7 @@ state.addEventListener("change", () => {
 
   (function(){
     // ========= CONFIG =========
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxDigr3g-pzrcAgut3fcKd_zMu0187K8lRTrrNvnIBaYzeS5F35HuX9Oh487Qw12-SFAA/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzqIPpVDlAK1WqD49mTA8nw9Dw7S4zRfvVBJO7ff4sTus3qAywTsdSiM1_XBgYwOquv/exec";
     const WHATSAPP_DEST = "573154661733"; // <-- Numero de Whatsapp logistica
 
     // Elements
@@ -1735,6 +1788,66 @@ closeModalAndReset();
     })();
 
   })();
+
+
+  // ===== Barra de avance para video1 (sin controles) =====
+(function () {
+  const video = document.getElementById("video1");
+  const fill = document.getElementById("videoProgressFill");
+  if (!video || !fill) return;
+
+  function updateProgress() {
+    if (!video.duration || isNaN(video.duration)) return;
+    const pct = Math.min(100, Math.max(0, (video.currentTime / video.duration) * 100));
+    fill.style.width = pct + "%";
+  }
+
+  video.addEventListener("timeupdate", updateProgress);
+  video.addEventListener("loadedmetadata", updateProgress);
+  video.addEventListener("seeked", updateProgress);
+
+  // Si el video se reinicia/loop, resetea la barra
+  video.addEventListener("ended", () => { fill.style.width = "100%"; });
+})();
+
+
+// ===== Aviso "producto agotado" + cuenta regresiva 5 min =====
+(function () {
+  const countdownEl = document.getElementById("stockCountdown");
+  const alertBox = document.getElementById("stockAlert");
+  if (!countdownEl || !alertBox) return;
+
+  const LS_KEY = "stock_countdown_end";
+  const FIVE_MIN = 5 * 60 * 1000;
+
+  let end = parseInt(localStorage.getItem(LS_KEY), 10);
+  if (!end || end < Date.now()) {
+    end = Date.now() + FIVE_MIN;
+    localStorage.setItem(LS_KEY, String(end));
+  }
+
+  function formatMMSS(ms) {
+    const total = Math.max(0, Math.floor(ms / 1000));
+    const m = String(Math.floor(total / 60)).padStart(2, "0");
+    const s = String(total % 60).padStart(2, "0");
+    return `${m}:${s}`;
+  }
+
+  const tick = () => {
+    const left = Math.max(0, end - Date.now());
+    countdownEl.textContent = formatMMSS(left);
+
+    if (left <= 0) {
+      // Cuando termina: puedes ocultar el aviso o cambiar mensaje
+      alertBox.innerHTML = `<strong>✅ Inventario disponible.</strong> Puedes realizar tu pedido ahora.`;
+      try { localStorage.removeItem(LS_KEY); } catch(e){}
+      clearInterval(timer);
+    }
+  };
+
+  tick();
+  const timer = setInterval(tick, 250);
+})();
   </script>
 
 
