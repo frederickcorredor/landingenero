@@ -98,7 +98,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     /* Layout */
     header.hero{position:relative;overflow:hidden;max-width:1200px;z-index:97;display: flex;flex-direction: column;flex-wrap: wrap;align-content: center;justify-content: center;align-items: center;}
-    header.hero img{width:70%;height:auto;display:block;object-fit:cover;}
+    header.hero img{width:100%;height:auto;display:block;object-fit:cover;}
     main{display: none;}
     main.show-main{max-width:1100px;margin:4px auto;padding:0 2px;display: flex;flex-direction: column;flex-wrap: wrap;align-content: center;justify-content: center;align-items: center;}
 
@@ -353,7 +353,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <img src="https://zipperstrong.renovexenlinea.com/imagencheckout.webp" alt="Shilajit Detox" fetchpriority="high" decoding="async" width="1200" height="675">
     <div style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center;width: 100%;">
              <video style="width: 65vw;"
-            src="https://zipperstrong.renovexenlinea.com/video2peque.mp4" id="video1" autoplay>
+            src="https://zipperstrong.renovexenlinea.com/video2peque.mp4" id="video1" autoplay controls>
         </video>
         <div class="video-progress" aria-label="Progreso del video">
     <div class="video-progress__fill" id="videoProgressFill"></div>
@@ -363,7 +363,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="stock-alert" id="stockAlert" role="status" aria-live="polite">
     <strong style="color: red; font-size: 22px;line-height: 30px;text-shadow: 1px 1.3px #f7f7f7;">PRODUCTO AGOTADO</strong> Inventario disponible en:
     <span class="countdown" id="stockCountdown">05:00</span> <br>
-    <span>(solo 100 unidades)</span>
+    <span>(solo <strong>100</strong> unidades)</span>
   </div>
     </div>
   </header>
@@ -1082,32 +1082,7 @@ state.addEventListener("change", () => {
     window.addEventListener('orientationchange', toggleBodyDisplay);
   })();
 
-  // ===== Mostrar MAIN al 70% del video principal =====
-(function () {
-  const video = document.getElementById("video1");
-  const main = document.querySelector("main");
-  if (!video || !main) return;
 
-  let mostrado = false;
-
-  function check70() {
-    // duration a veces es NaN hasta que cargue metadata
-    if (!video.duration || isNaN(video.duration)) return;
-
-    const progreso = video.currentTime / video.duration; // 0 a 1
-    if (!mostrado && progreso >= 0.50) {
-      main.classList.add("show-main");
-      mostrado = true;
-
-      // opcional: deja de escuchar para ahorrar recursos
-      video.removeEventListener("timeupdate", check70);
-    }
-  }
-
-  // cuando haya metadata ya se conoce duration
-  video.addEventListener("loadedmetadata", check70);
-  video.addEventListener("timeupdate", check70);
-})();
 
 
   (function(){
@@ -1844,10 +1819,62 @@ closeModalAndReset();
       countdownEl.textContent = formatMMSS(left);
 
       if (left <= 0) {
+          // 👉 MOSTRAR MAIN AQUÍ (SINCRONIZADO)
+  const main = document.querySelector("main");
+  if (main && !main.classList.contains("show-main")) {
+    main.classList.add("show-main");
+  }
         alertBox.innerHTML =
-          `<strong style="color: green; font-size: 22px;line-height: 30px;text-shadow: 1px 1.3px white;">INVENTARIO DISPONIBLE</strong> Puedes realizar tu pedido ahora. <br>  <span style="font-weight:600;color:#ffb300;">
+          `<strong style="color: green; font-size: 22px;line-height: 30px;text-shadow: 1px 1.3px white;">INVENTARIO DISPONIBLE</strong> Puedes realizar tu pedido ahora. <br>  <span style="font-weight:600;color:#ffb300;border: 2px solid white;border-radius: 16px;padding: 6px 16px; line-height: 42px;box-shadow: 2px 2px 6px rgba(0,0,0,0.2);">
     <span id="stockUnits">100</span> unidades disponibles
   </span>`;
+
+  // ===== Unidades (100 → 0 en ~6 min) desde el AVISO INICIAL =====
+(function () {
+  const unitsEl = document.getElementById("stockUnits");
+  if (!unitsEl) return;
+
+  const LS_UNITS = "zipper_units_v1";
+  const LS_LAST  = "zipper_units_last_v1";
+
+  // inicia en 100 si no hay nada guardado
+  let units = parseInt(localStorage.getItem(LS_UNITS), 10);
+  if (isNaN(units)) units = 140;
+
+  unitsEl.textContent = units;
+
+  function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function tick() {
+    // si el elemento desaparece por cambios de HTML, reintenta
+    const el = document.getElementById("stockUnits");
+    if (!el) {
+      setTimeout(tick, 500);
+      return;
+    }
+
+    if (units <= 10) {
+      el.textContent = "10";
+      localStorage.setItem(LS_UNITS, "10");
+      return;
+    }
+
+    // decremento realista: 1 unidad por tick (promedio ~6 min con delays 2-5s)
+    units = Math.max(0, units - 1);
+
+    el.textContent = units;
+    localStorage.setItem(LS_UNITS, String(units));
+    localStorage.setItem(LS_LAST, String(Date.now()));
+
+    // siguiente tick entre 2 y 5 segundos
+    setTimeout(tick, rand(2000, 5000));
+  }
+
+  // arranque: si recargan, sigue
+  setTimeout(tick, rand(2000, 5000));
+})();
         try { localStorage.removeItem(LS_KEY); } catch(e){}
         if (timer) clearInterval(timer);
       }
@@ -1878,51 +1905,7 @@ closeModalAndReset();
 })();
 
 
-// ===== Contador realista de unidades (100 → 0 en ~6 min) =====
-(function () {
-  const unitsEl = document.getElementById("stockUnits");
-  if (!unitsEl) return;
 
-  const LS_KEY = "zipper_stock_units";
-  const LS_TIME = "zipper_stock_last_tick";
-
-  let units = parseInt(localStorage.getItem(LS_KEY), 10);
-  if (isNaN(units)) units = 100;
-
-  unitsEl.textContent = units;
-
-  function randomBetween(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  function tick() {
-    if (units <= 0) {
-      unitsEl.textContent = "0";
-      return;
-    }
-
-    // decremento variable: a veces 1, a veces 2
-    const decrement = Math.random() < 0.75 ? 1 : 2;
-    units = Math.max(0, units - decrement);
-
-    unitsEl.textContent = units;
-    localStorage.setItem(LS_KEY, units);
-
-    // siguiente tick entre 2 y 5 segundos
-    const nextIn = randomBetween(2000, 5000);
-    localStorage.setItem(LS_TIME, Date.now());
-
-    setTimeout(tick, nextIn);
-  }
-
-  // sincroniza si el usuario recarga
-  const lastTick = parseInt(localStorage.getItem(LS_TIME), 10);
-  if (!lastTick || Date.now() - lastTick > 6000) {
-    setTimeout(tick, randomBetween(2000, 5000));
-  } else {
-    setTimeout(tick, randomBetween(2000, 5000));
-  }
-})();
 
 
   </script>
