@@ -301,14 +301,15 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 /* Aviso de inventario */
 .stock-alert{
-  width: min(80vw, 520px);
+  width: min(95vw, 520px);
   text-align:center;
   padding:10px 12px;
   border-radius:14px;
   border:1px solid rgba(255,255,255,0.18);
-  background: rgb(0 0 0 / 97%);
+  background: rgba(255, 255, 255, 0.97);
   font-size: 0.95rem;
   line-height: 24px;
+  color: #000000;
 }
 .stock-alert .countdown{
   display:inline-block;
@@ -361,7 +362,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
   <!-- Aviso de agotado + cuenta regresiva -->
   <div class="stock-alert" id="stockAlert" role="status" aria-live="polite">
-    <strong style="color: red; font-size: 22px;line-height: 30px;text-shadow: 1px 1.3px #f7f7f7;">PRODUCTO AGOTADO</strong> Inventario disponible en:
+    <strong style="color: red; font-size: 22px;line-height: 30px;text-shadow: 1px 1.3px #f7f7f7;">PRODUCTO AGOTADO</strong> <br> Inventario disponible en:
     <span class="countdown" id="stockCountdown">05:00</span> <br>
     <span>(solo <strong>100</strong> unidades)</span>
   </div>
@@ -1456,8 +1457,6 @@ if (submitBtn) {
 
         if (window.ttq) { ttq.track("Lead"); }
         
-    
-  fbq('track', 'Purchase');
 
 
         // 👉 MOSTRAR EL GIF EN VEZ DEL TOAST
@@ -1839,7 +1838,7 @@ closeModalAndReset();
 
   // inicia en 100 si no hay nada guardado
   let units = parseInt(localStorage.getItem(LS_UNITS), 10);
-  if (isNaN(units)) units = 140;
+  if (isNaN(units)) units = 100;
 
   unitsEl.textContent = units;
 
@@ -1913,5 +1912,4 @@ closeModalAndReset();
 
 
 </body></html>
-
 
