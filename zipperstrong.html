@@ -1844,9 +1844,11 @@ closeModalAndReset();
   const LS_LAST  = "zipper_units_last_v1";
 
   // inicia en 100 si no hay nada guardado
-  let units = parseInt(localStorage.getItem(LS_UNITS), 10);
-  if (isNaN(units)) units = 100;
-
+  //let units = parseInt(localStorage.getItem(LS_UNITS), 10);
+  //if (isNaN(units)) units = 100;
+// 🔥 SIEMPRE iniciar en 100
+let units = 100;
+localStorage.setItem(LS_UNITS, "100");
   unitsEl.textContent = units;
 
   function rand(min, max) {
@@ -1919,4 +1921,3 @@ closeModalAndReset();
 
 
 </body></html>
-
