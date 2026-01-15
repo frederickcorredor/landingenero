@@ -26,7 +26,7 @@
 }
 
 video{
-    width: 95%;
+    width: 90%;
     aspect-ratio: 9/16;
     height: auto;
 }
@@ -60,7 +60,7 @@ video{
 
 .sound-overlay{
     position: absolute;
-    top: 70%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(0,0,0,0.75);
@@ -157,7 +157,6 @@ video{
             animation-timing-function: ease-out;
   }
 }
-
 
 
 
