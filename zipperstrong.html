@@ -359,7 +359,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <img src="https://zipperstrong.renovexenlinea.com/imagencheckout.webp" alt="Shilajit Detox" fetchpriority="high" decoding="async" width="1200" height="675">
     <div style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center;width: 100%;background: black;">
              <video style="width: 65vw;"
-            src="https://zipperstrong.renovexenlinea.com/videocortado1.mp4" id="video1" autoplay controls>
+            src="https://zipperstrong.renovexenlinea.com/videocortado1.mp4" id="video1" autoplay>
         </video>
         <div class="video-progress" aria-label="Progreso del video">
     <div class="video-progress__fill" id="videoProgressFill"></div>
@@ -1160,6 +1160,8 @@ state.addEventListener("change", () => {
       if (window.ttq) { ttq.track("InitiateCheckout"); }
     }
 
+    window.openCheckoutRenovex = openCheckout; // ✅ ahora es global
+
 function resetState() {
   showOfferSection();
   hideForm();
@@ -1829,9 +1831,9 @@ closeModalAndReset();
     main.classList.add("show-main");
   }
         alertBox.innerHTML =
-          `<div><strong style="color: green; font-size: 22px;line-height: 30px;">INVENTARIO DISPONIBLE</strong></div> Compra ya por que se acaba. <br>  <span style="font-weight:600;color:red;border: 2px solid white;border-radius: 16px;padding: 6px 16px; line-height: 42px;box-shadow: 2px 2px 6px rgba(0,0,0,0.2);animation: heartbeat 1.5s ease-in-out infinite both;">
+          `<div onclick="window.openCheckoutRenovex(event)" style="cursor:pointer;animation: none;"><div><strong style="color: green; font-size: 22px;line-height: 30px;">INVENTARIO DISPONIBLE</strong></div> Compra ya por que se acaba. <br>  <span style="font-weight:600;color:red;border: 2px solid white;border-radius: 16px;padding: 6px 16px; line-height: 42px;box-shadow: 2px 2px 6px rgba(0,0,0,0.2);animation: heartbeat 1.5s ease-in-out infinite both;">
     Quedan <span id="stockUnits">100</span> Zipper disponibles
-  </span>`;
+  </span></div>`;
 
   // ===== Unidades (100 → 0 en ~6 min) desde el AVISO INICIAL =====
 (function () {
@@ -1873,11 +1875,11 @@ closeModalAndReset();
     localStorage.setItem(LS_LAST, String(Date.now()));
 
     // siguiente tick entre 2 y 5 segundos
-    setTimeout(tick, rand(2000, 5000));
+    setTimeout(tick, rand(3000, 8000));
   }
 
   // arranque: si recargan, sigue
-  setTimeout(tick, rand(2000, 5000));
+  setTimeout(tick, rand(3000, 8000));
 })();
         try { localStorage.removeItem(LS_KEY); } catch(e){}
         if (timer) clearInterval(timer);
