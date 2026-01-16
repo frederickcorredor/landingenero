@@ -301,9 +301,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 /* Aviso de inventario */
 .stock-alert{
-  width: min(95vw, 520px);
+  width: min(82vw, 520px);
   text-align:center;
-  padding:10px 12px;
+  padding:6px;
   border-radius:14px;
   border:1px solid rgba(255,255,255,0.18);
   background: rgba(255, 255, 255, 0.97);
@@ -367,7 +367,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
   <!-- Aviso de agotado + cuenta regresiva -->
   <div class="stock-alert" id="stockAlert" role="status" aria-live="polite">
-    <div><strong style="color: red; font-size: 20px;line-height: 30px;">PRODUCTO AGOTADO</strong></div> Inventario disponible en:
+    <div><strong style="color: red; font-size: 20px;line-height: 23px;">PRODUCTO AGOTADO</strong></div> Inventario disponible en:
     <span class="countdown" id="stockCountdown">05:00</span> <br>
     <span>(solo <strong>100</strong> unidades)</span>
   </div>
@@ -1831,7 +1831,7 @@ closeModalAndReset();
     main.classList.add("show-main");
   }
         alertBox.innerHTML =
-          `<div onclick="window.openCheckoutRenovex(event)" style="cursor:pointer;animation: none;"><div><strong style="color: green; font-size: 22px;line-height: 30px;">INVENTARIO DISPONIBLE</strong></div> Compra ya por que se acaba. <br>  <span style="font-weight:600;color:red;border: 2px solid white;border-radius: 16px;padding: 6px 16px; line-height: 42px;box-shadow: 2px 2px 6px rgba(0,0,0,0.2);animation: heartbeat 1.5s ease-in-out infinite both;">
+          `<div onclick="window.openCheckoutRenovex(event)" style="cursor:pointer;animation: none;"><div><strong style="color: green; font-size: 22px;line-height: 22px;">INVENTARIO DISPONIBLE</strong></div> Compra ya por que se acaba. <br>  <span style="font-weight:600;color:red;border: 2px solid white;border-radius: 16px;padding: 6px 16px; line-height: 42px;box-shadow: 2px 2px 6px rgba(0,0,0,0.2);animation: heartbeat 1.5s ease-in-out infinite both;">
     Quedan <span id="stockUnits">100</span> Zipper disponibles
   </span></div>`;
 
@@ -1921,4 +1921,5 @@ localStorage.setItem(LS_UNITS, "100");
 
 
 </body></html>
+
 
