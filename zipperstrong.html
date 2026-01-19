@@ -352,7 +352,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     .sound-overlay{
     position: absolute;
-    top: 75%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(0,0,0,0.75);
@@ -381,7 +381,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <header class="hero">
     <img src="https://zipperstrong.renovexenlinea.com/imagencheckout.webp" alt="Shilajit Detox" fetchpriority="high" decoding="async" width="1200" height="675">
     <div style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center;width: 100%;background: black;">
-             <video style="width: 80vw;"
+             <video style="width: 75vw;"
             src="https://zipperstrong.renovexenlinea.com/videocortado1.mp4" id="video1" autoplay muted playsinline>
         </video>
         <div class="video-progress" aria-label="Progreso del video">
@@ -655,101 +655,131 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         
 
         <!-- Formulario -->
-        <form id="orderForm" class="glass" novalidate="">
-          <!-- Honeypot -->
-          <input type="text" name="website" id="hp" style="position:absolute;left:-9999px;top:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <h3 style="animation: none;color: var(--gold);font-size: 21px;margin-top: -15px;">INDÍCANOS TUS DATOS PARA EL ENVÍO</h3>
-          <div>
-            <label>Nombre y Apellidos
-              <span class="field">
-                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"></path></svg>
-                <input required="" name="name" type="text" placeholder="Tu nombre completo" class="in with-ico" maxlength="80">
-              </span>
-            </label>
+       <form id="orderForm" class="glass" novalidate="">
+  <!-- Honeypot -->
+  <input type="text" name="website" id="hp" style="position:absolute;left:-9999px;top:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-            <label>WhatsApp
-              <span class="field">
-                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1v3.59a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1h3.6a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.56 1 1 0 0 1-.24 1.01Z"></path></svg>
-                <input required="" name="phone" type="tel" inputmode="numeric" placeholder="+57 3xx xxx xxxx" class="in with-ico" maxlength="13" autocomplete="tel" title="Si inicia con 57: mínimo 12 dígitos. En otro caso: mínimo 10 dígitos.">
-              </span>
-            </label>
-          </div>
+  <h3 style="animation: none;color: var(--gold);font-size: 21px;margin-top: -15px;">INDÍCANOS TUS DATOS PARA EL ENVÍO</h3>
 
-           <div>
-            <label>Departamento
-              <span class="field">
-                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5Z"/></svg>
-                <select required name="state" id="state" class="in with-ico">
-                  <option value="" selected disabled>Selecciona</option>
-                  <option>Amazonas</option><option>Antioquia</option><option>Arauca</option><option>Atlántico</option>
-                  <option>Bolívar</option><option>Boyacá</option><option>Caldas</option><option>Caquetá</option><option>Casanare</option><option>Cauca</option><option>Cesar</option>
-                  <option>Chocó</option><option>Córdoba</option><option>Cundinamarca</option><option>Guainía</option><option>Guaviare</option><option>Huila</option><option>La Guajira</option>
-                  <option>Magdalena</option><option>Meta</option><option>Nariño</option><option>Norte de Santander</option><option>Putumayo</option><option>Quindío</option><option>Risaralda</option>
-                  <option>San Andrés y Providencia</option><option>Santander</option><option>Sucre</option><option>Tolima</option><option>Valle del Cauca</option><option>Vaupés</option><option>Vichada</option>
-                </select>
-              </span>
-            </label>
+  <div>
+    <label>Nombre y Apellidos
+      <span class="field">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"></path></svg>
+        <input required="" name="name" type="text" placeholder="Tu nombre completo" class="in with-ico" maxlength="80">
+      </span>
+    </label>
 
-            <label>Ciudad / Municipio
-              <span class="field">
-                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a6 6 0 0 0-6 6c0 3.87 6 10 6 10s6-6.13 6-10a6 6 0 0 0-6-6Zm0 8a2 2 0 1 1 2-2 2 2 0 0 1-2 2Z"/></svg>
-                <select required name="city" id="city" class="in with-ico" disabled>
-                  <option selected disabled>Selecciona un departamento primero</option>
-                </select>
-              </span>
-            </label>
-          </div>
+    <label>WhatsApp
+      <span class="field">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1v3.59a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1h3.6a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.56 1 1 0 0 1-.24 1.01Z"></path></svg>
+        <input required="" name="phone" type="tel" inputmode="numeric" placeholder="+57 3xx xxx xxxx" class="in with-ico" maxlength="13" autocomplete="tel" title="Si inicia con 57: mínimo 12 dígitos. En otro caso: mínimo 10 dígitos.">
+      </span>
+    </label>
+  </div>
 
-          <label>Dirección de entrega
-            <span class="field">
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3Z"></path></svg>
-              <input required="" name="address" type="text" placeholder="Calle 00 # 00-00, apto, barrio" class="in with-ico" maxlength="120">
-            </span>
-          </label>
+  <div>
+    <label>Departamento
+      <span class="field">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5Z"/></svg>
+        <select required name="state" id="state" class="in with-ico">
+          <option value="" selected disabled>Selecciona</option>
+          <option>Amazonas</option><option>Antioquia</option><option>Arauca</option><option>Atlántico</option>
+          <option>Bolívar</option><option>Boyacá</option><option>Caldas</option><option>Caquetá</option><option>Casanare</option><option>Cauca</option><option>Cesar</option>
+          <option>Chocó</option><option>Córdoba</option><option>Cundinamarca</option><option>Guainía</option><option>Guaviare</option><option>Huila</option><option>La Guajira</option>
+          <option>Magdalena</option><option>Meta</option><option>Nariño</option><option>Norte de Santander</option><option>Putumayo</option><option>Quindío</option><option>Risaralda</option>
+          <option>San Andrés y Providencia</option><option>Santander</option><option>Sucre</option><option>Tolima</option><option>Valle del Cauca</option><option>Vaupés</option><option>Vichada</option>
+        </select>
+      </span>
+    </label>
 
-          <!-- Hidden qty fields -->
-          <input type="hidden" name="qty" id="qtyField" value="">
-          <input type="hidden" name="qty_num" id="qtyNumField" value="">
-<!--
-          <label style="display:flex;gap:10px;align-items:flex-start">
-            <input type="checkbox" required name="terms" style="accent-color:var(--red)">
-            <span class="muted">Quiero recibir Retardante y Multi Orgásmico GRATIS</span>
-          </label>-->
+    <label>Ciudad / Municipio
+      <span class="field">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a6 6 0 0 0-6 6c0 3.87 6 10 6 10s6-6.13 6-10a6 6 0 0 0-6-6Zm0 8a2 2 0 1 1 2-2 2 2 0 0 1-2 2Z"/></svg>
+        <select required name="city" id="city" class="in with-ico" disabled>
+          <option selected disabled>Selecciona un departamento primero</option>
+        </select>
+      </span>
+    </label>
+  </div>
 
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button type="submit" id="submitBtn" class="btn">
-              <span class="btn-text">Confirmar pedido</span>
-            </button>
-          </div>
 
-          <h3 style="width:100%;text-align:center;margin-top:15px;margin-bottom:10px;color:white; animation: none;">
-            Ellos ya recibieron su <br><span style="color: var(--gold);">ZIPPER STRONG</span>
-          </h3>
 
-          <!-- Carrusel 2x2 -->
-          <section class="carousel-container2" aria-roledescription="carrusel de testimonios">
-            <section class="carousel-track2">
-              <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador1.webp" alt="Cliente 1" loading="lazy"></section>
-              <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador2.webp" alt="Cliente 2" loading="lazy"></section>
-              <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador3.webp" alt="Cliente 3" loading="lazy"></section>
-              <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador4.webp" alt="Cliente 4" loading="lazy"></section>
-              <!--<section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador5.webp" alt="Cliente 5" loading="lazy"></section>-->
-              
-               <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador1.webp" alt="Cliente 1" loading="lazy"></section>
-              <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador2.webp" alt="Cliente 2" loading="lazy"></section>
-              <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador3.webp" alt="Cliente 3" loading="lazy"></section>
-              <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador4.webp" alt="Cliente 4" loading="lazy"></section>
-              <!--<section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador5.webp" alt="Cliente 5" loading="lazy"></section>
-              <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador6.webp" alt="Cliente 6" loading="lazy"></section>-->
-            </section>
-          </section>
+  <!-- ✅ NUEVO: Tipo de vivienda -->
+  <label>Tipo de vivienda
+    <span class="field">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3Z"></path></svg>
+      <select required name="housing_type" id="housing_type" class="in with-ico">
+        <option value="" selected disabled>Selecciona</option>
+        <option value="Casa">Casa</option>
+        <option value="Apartamento">Apartamento</option>
+        <option value="Edificio">Negocio</option>
+      </select>
+    </span>
+  </label>
 
-          <div id="formMsg" class="muted" role="status" aria-live="polite" style="margin-top:8px"></div>
+    <label>Dirección de entrega
+    <span class="field">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3Z"></path></svg>
+      <input required="" name="address" type="text" placeholder="Calle 00 # 00-00, barrio" class="in with-ico" maxlength="120">
+    </span>
+  </label>
 
-          <!-- Valores ocultos de oferta para fallback -->
-          <input type="hidden" name="offer" value="">
-          <input type="hidden" name="offer_price" value="">
-        </form>
+  <!-- ✅ NUEVO: Campos extra (solo se muestran si es Apartamento o Edificio) -->
+  <div id="housing_extra" style="display:none;">
+    <label>Torre / Bloque
+      <span class="field">
+        <input name="tower" id="tower" type="text" placeholder="Ej: Torre 3 / Bloque B" class="in" maxlength="20">
+      </span>
+    </label>
+
+    <label>Piso
+      <span class="field">
+        <input name="floor" id="floor" type="text" inputmode="numeric" placeholder="Ej: 5" class="in" maxlength="5">
+      </span>
+    </label>
+
+    <label>Apto / Interior
+      <span class="field">
+        <input name="apt" id="apt" type="text" placeholder="Ej: 502 / Int 12" class="in" maxlength="10">
+      </span>
+    </label>
+  </div>
+
+  <!-- Hidden qty fields -->
+  <input type="hidden" name="qty" id="qtyField" value="">
+  <input type="hidden" name="qty_num" id="qtyNumField" value="">
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+    <button type="submit" id="submitBtn" class="btn">
+      <span class="btn-text">Confirmar pedido</span>
+    </button>
+  </div>
+
+  <h3 style="width:100%;text-align:center;margin-top:15px;margin-bottom:10px;color:white; animation: none;">
+    Ellos ya recibieron su <br><span style="color: var(--gold);">ZIPPER STRONG</span>
+  </h3>
+
+  <!-- Carrusel 2x2 (lo dejas tal cual lo tenías) -->
+  <section class="carousel-container2" aria-roledescription="carrusel de testimonios">
+    <section class="carousel-track2">
+      <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador1.webp" alt="Cliente 1" loading="lazy"></section>
+      <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador2.webp" alt="Cliente 2" loading="lazy"></section>
+      <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador3.webp" alt="Cliente 3" loading="lazy"></section>
+      <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador4.webp" alt="Cliente 4" loading="lazy"></section>
+
+      <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador1.webp" alt="Cliente 1" loading="lazy"></section>
+      <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador2.webp" alt="Cliente 2" loading="lazy"></section>
+      <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador3.webp" alt="Cliente 3" loading="lazy"></section>
+      <section class="slide"><img src="https://zipperstrong.renovexenlinea.com/comprador4.webp" alt="Cliente 4" loading="lazy"></section>
+    </section>
+  </section>
+
+  <div id="formMsg" class="muted" role="status" aria-live="polite" style="margin-top:8px"></div>
+
+  <!-- Valores ocultos de oferta para fallback -->
+  <input type="hidden" name="offer" value="">
+  <input type="hidden" name="offer_price" value="">
+</form>
 
         <div id="formMount"></div>
       </div>
@@ -1120,7 +1150,7 @@ state.addEventListener("change", () => {
 
   (function(){
     // ========= CONFIG =========
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzqIPpVDlAK1WqD49mTA8nw9Dw7S4zRfvVBJO7ff4sTus3qAywTsdSiM1_XBgYwOquv/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIm1XpnMXGaEZir4rKhwGS8eDWtEo3_soodGrTzI_NFvnIdifkku8asFzVUbiusnK7/exec";
     const WHATSAPP_DEST = "573154661733"; // <-- Numero de Whatsapp logistica
 
     // Elements
@@ -1155,6 +1185,40 @@ state.addEventListener("change", () => {
 
     function showToast(text){ toast && (toast.textContent = text, toast.classList.add('show'), setTimeout(()=> toast.classList.remove('show'), 3000)); }
     function formatCOP(n){ try { return n.toLocaleString('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}); } catch(e){ return '$' + n; } }
+
+ // ===== Tipo de vivienda (mostrar/ocultar extras) =====
+  const housingTypeEl = form ? form.querySelector('#housing_type') : null;
+  const housingExtraEl = document.getElementById('housing_extra');
+  const towerEl = form ? form.querySelector('#tower') : null;
+  const floorEl = form ? form.querySelector('#floor') : null;
+  const aptEl   = form ? form.querySelector('#apt') : null;
+
+  function setHousingExtrasRequired(required) {
+    if (!towerEl || !floorEl || !aptEl) return;
+    towerEl.required = required;
+    floorEl.required = required;
+    aptEl.required   = required;
+  }
+
+  function clearHousingExtras() {
+    if (towerEl) towerEl.value = "";
+    if (floorEl) floorEl.value = "";
+    if (aptEl)   aptEl.value = "";
+  }
+
+  function updateHousingUI() {
+    if (!housingTypeEl || !housingExtraEl) return;
+    const v = housingTypeEl.value;
+    const needsExtra = (v === "Apartamento" || v === "Edificio");
+    housingExtraEl.style.display = needsExtra ? "" : "none";
+    setHousingExtrasRequired(needsExtra);
+    if (!needsExtra) clearHousingExtras();
+  }
+
+  if (housingTypeEl) housingTypeEl.addEventListener('change', updateHousingUI);
+  updateHousingUI();
+
+
 
     // Open/close modal (MODIFICADAS: control de pointer-events con clase .ready)
     function openCheckout(e){
@@ -1453,6 +1517,12 @@ if (submitBtn) {
           city: form.city.value,
           address: form.address.value,
 
+                  // ✅ NUEVOS
+        housing_type: form.housing_type.value,
+        tower: form.tower ? form.tower.value : "",
+        floor: form.floor ? form.floor.value : "",
+        apt: form.apt ? form.apt.value : "",
+
           qty: (qtyField?.value || ''),
           qty_num: Number(qtyNumField?.value || 0),
 
@@ -1483,6 +1553,7 @@ if (submitBtn) {
           `• Total: ${formatCOP(data.total_price)}\n` +
           `• Departamento: ${data.state}\n` +
           `• Ciudad: ${data.city}\n` +
+          `• Tipo de vivienda: ${data.housing_type}\n` +
           `• Dirección: ${data.address}\n` +
           `• WhatsApp: ${data.phone}\n\n` +
           `Deseo coordinar el envío. ¡Gracias!`;
@@ -1858,9 +1929,11 @@ closeModalAndReset();
     main.classList.add("show-main");
   }
         alertBox.innerHTML =
-          `<div onclick="window.openCheckoutRenovex(event)" style="cursor:pointer;animation: none;"><div><strong style="color: green; font-size: 22px;line-height: 22px;">INVENTARIO DISPONIBLE</strong></div> Compra ya por que se acaba. <br>  <span style="font-weight:600;color:red;border: 2px solid white;border-radius: 16px;padding: 6px 16px; line-height: 42px;box-shadow: 2px 2px 6px rgba(0,0,0,0.2);animation: heartbeat 1.5s ease-in-out infinite both;">
-    Quedan <span id="stockUnits">100</span> Zipper disponibles
-  </span></div>`;
+          `<div onclick="window.openCheckoutRenovex(event)" style="cursor:pointer;animation: none;"><div><strong style="color: green; font-size: 21px;line-height: 21px;">INVENTARIO DISPONIBLE</strong></div><span style="font-weight:600;border: 2px solid white;border-radius: 16px;padding: 2px 16px; line-height: 28px;box-shadow: 2px 2px 6px rgba(0,0,0,0.2);animation: heartbeat 1.5s ease-in-out infinite both;">
+    Quedan <span id="stockUnits" style="color:red;">100</span> Zipper Strong</span>
+    <span style="width: 100%;display: block;
+">Compra ya que se acaban</span> 
+    </div>`;
 
   // ===== Unidades (100 → 0 en ~6 min) desde el AVISO INICIAL =====
 (function () {
@@ -1903,7 +1976,7 @@ localStorage.setItem(LS_UNITS, "100");
     localStorage.setItem(LS_UNITS, String(units));
     localStorage.setItem(LS_LAST, String(Date.now()));
 
-    // siguiente tick entre 2 y 5 segundos
+    // siguiente tick entre 3 y 8 segundos
     setTimeout(tick, rand(3000, 8000));
   }
 
